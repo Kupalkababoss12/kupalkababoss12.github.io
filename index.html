@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOMARR BALNIN AHESHH</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-top: 50px;
+            color: #333;
+        }
+
+        /* Styles for the question buttons */
+        .question-button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            position: absolute;
+        }
+
+        /* Positioning for the buttons */
+        .button-1 { top: 10%; left: 10%; }
+        .button-2 { top: 10%; right: 10%; }
+        .button-3 { bottom: 10%; left: 10%; }
+        .button-4 { bottom: 10%; right: 10%; }
+        .button-5 { top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); }
+
+        /* Hidden message styles */
+        .hidden-message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Middle finger emoji */
+        .middle-finger {
+            font-size: 70px;
+            color: #e74c3c;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>KUPAL KA</h1>
+
+    <!-- Multiple question buttons -->
+    <button class="question-button button-1" onclick="askQuestion(1)">CLICK MO NGA POGI</button>
+    <button class="question-button button-2" onclick="askQuestion(2)">CLICK MO 'to KUNG TANGA KA</button>
+    <button class="question-button button-3" onclick="askQuestion(3)">KUPAL KA BA?</button>
+    <button class="question-button button-4" onclick="askQuestion(4)">KUPAL KA BA?</button>
+    <button class="question-button button-5" onclick="askQuestion(5)">KUPAL KA BA?</button>
+
+    <!-- Hidden message for Yes/No answers -->
+    <div id="message-1" class="hidden-message"></div>
+    <div id="message-2" class="hidden-message"></div>
+    <div id="message-3" class="hidden-message"></div>
+    <div id="message-4" class="hidden-message"></div>
+    <div id="message-5" class="hidden-message"></div>
+
+    <script>
+        // Function to handle the question and answers
+        function askQuestion(buttonNumber) {
+            var questionMessage = document.getElementById('message-' + buttonNumber);
+
+            // Predefined answers that can be edited here
+            var yesAnswer = "PUTANGINAMO KUPAL <span class='middle-finger'>🖕</span>";
+            var noAnswer = "KUPAL KA TALAGA!";
+
+            // Ask user Yes/No and show answers
+            var userResponse = confirm("KUPAL KA BA? Click 'OK' for YES, 'Cancel' for NO.");
+            if (userResponse) {
+                // If Yes (editable answer)
+                questionMessage.innerHTML = yesAnswer;
+            } else {
+                // If No (editable answer)
+                questionMessage.innerHTML = noAnswer;
+            }
+
+            // Display the message
+            questionMessage.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
